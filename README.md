@@ -18,3 +18,5 @@ Este repositorio tiene la resolución del reto Frontend con el uso de Vanilla JS
 4. `assets` tiene dos imagenes.
 
 **Revisa y corre este proyecto fue divertido realizarlo**
+# Autor
+Cristian Ronda
