@@ -1,0 +1,163 @@
+:root {
+  --primary: #00afc7;
+  --secondary: #bfce51;
+  --bg-span: #f7de8e;
+  --title: #2d2d2d;
+  --hv-title: #ffffff;
+  --hv-span: #bfce51;
+}
+
+body {
+  position: relative;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui;
+  height: 100vh;
+  font-family: Open Sans;
+}
+.next,
+.before {
+  position: absolute;
+  vertical-align: text-bottom;
+  font-size: 4rem;
+  padding: 8px;
+  top: 45%;
+  color: white;
+}
+
+.next {
+  right: 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 350px 350px;
+  grid-template-rows: repeat(4, 1fr);
+  height: 100vh;
+  grid-template-areas:
+    "logo logo logo"
+    "img name name"
+    "img details details"
+    "img details details"
+    "ing ing ing";
+}
+.logo {
+  grid-area: logo;
+  width: 90%;
+  margin: 0 auto;
+  background-image: url(/assets/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 88px;
+  transition: all 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.container-img {
+  width: 350px;
+  height: 350px;
+  border-radius: 175px;
+  overflow: hidden;
+  margin: auto auto;
+  grid-area: img;
+}
+.character-name h2 {
+  font-size: 40px;
+  line-height: 1rem;
+  text-align: center;
+  color: white;
+}
+.container-img img {
+  width: 100%;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container-img:hover {
+  border: 5px solid var(--secondary);
+}
+.container-img img:hover {
+  transform: scale(1.1) rotate(25deg);
+}
+.character-name {
+  grid-area: name;
+  font-weight: bold;
+  text-align: center;
+}
+.character-details {
+  grid-area: details;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.character-details span {
+  margin: 1rem;
+  width: 50%;
+  text-align: center;
+  background-color: var(--bg-span);
+  padding: 0.4rem;
+  color: var(--title);
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+.character-details span:hover {
+  transform: scale(1.1);
+  background-color: var(--hv-span);
+  color: var(--hv-title);
+}
+.logo-ing {
+  width: 300px;
+  margin: 1rem auto;
+}
+.initgrammers {
+  grid-area: ing;
+  display: flex;
+  justify-content: right;
+  background-image: url(assets/logo_ing.svg);
+  width: 100%;
+}
+.container-buttons {
+  grid-area: buttons;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 32px;
+}
+@media (max-width: 900px) {
+  body {
+    background-color: var(--secondary);
+  }
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  .container {
+    grid-template-columns: 100%;
+    grid-template-rows: 150px 300px 50px 1fr 50px;
+    grid-template-areas: "logo" "img" "name" "details" "ing";
+  }
+  .container-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+  }
+  .container-img:hover {
+    border: 5px solid var(--primary);
+  }
+  .container-img img:hover {
+    transform: scale(1.1) rotate(-25deg);
+  }
+  .character-details span:hover {
+    transform: scale(1.1);
+    background-color: var(--primary);
+    color: var(--hv-title);
+  }
+  .logo-ing {
+    width: 60%;
+    margin: 1rem auto;
+  }
+}
